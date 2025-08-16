@@ -12,8 +12,11 @@ public class TipoCombustivelConverter {
         }
 
         TipoCombustivelEntity entity = new TipoCombustivelEntity();
+
+        entity.setId(tipoCombustivelDO.getId());
         entity.setNome(tipoCombustivelDO.getNome());
         entity.setPrecoPorLitro(tipoCombustivelDO.getPrecoPorLitro());
+
         return entity;
     }
 
@@ -24,8 +27,11 @@ public class TipoCombustivelConverter {
         }
 
         TipoCombustivelDO model = new TipoCombustivelDO();
+
+        model.setId(entity.getId());
         model.setNome(entity.getNome());
         model.setPrecoPorLitro(entity.getPrecoPorLitro());
+
         return model;
     }
 

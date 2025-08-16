@@ -23,18 +23,24 @@ public class TipoCombustivelService {
     }
 
     public void deletarTipoCombustivel(BigInteger id) {
+        TipoCombustivelDO tipoCombustivelDO = tipoCombustivelRepository.buscarPorId(id);
+        if (tipoCombustivelDO == null) {
+            throw new IllegalArgumentException("Tipo de combustível não encontrado");
+        }
         tipoCombustivelRepository.excluir(id);
     }
 
-    public void editarTipoCombustivel(BigInteger id, TipoCombustivelDO tipoCombustivelDO) {
+    public void editarTipoCombustivel(BigInteger id, TipoCombustivelDO tipoCombustivelDO) throws IllegalArgumentException {
+
         TipoCombustivelDO tipoCombustivelDOEditar = tipoCombustivelRepository.buscarPorId(id);
-        if (tipoCombustivelDOEditar != null) {
-            tipoCombustivelDOEditar.setNome(tipoCombustivelDO.getNome());
-            tipoCombustivelDOEditar.setPrecoPorLitro(tipoCombustivelDO.getPrecoPorLitro());
-            tipoCombustivelRepository.cadastrar(tipoCombustivelDOEditar);
-        } else {
-            throw new IllegalArgumentException("Tipo de combustível não encontrado com o ID: " + id);
+
+        if (tipoCombustivelDOEditar == null) {
+            throw new IllegalArgumentException("Tipo de combustível não encontrado");
         }
+
+        tipoCombustivelDOEditar.setNome(tipoCombustivelDO.getNome());
+        tipoCombustivelDOEditar.setPrecoPorLitro(tipoCombustivelDO.getPrecoPorLitro());
+        tipoCombustivelRepository.cadastrar(tipoCombustivelDOEditar);
     }
 
     public List<TipoCombustivelDO> buscarTipoCombustivel() {

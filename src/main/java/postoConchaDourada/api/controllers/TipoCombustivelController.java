@@ -29,7 +29,7 @@ public class TipoCombustivelController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> editarTipoCombustivel(@PathVariable("id") BigInteger id, @RequestBody TipoCombustivelDO tipoCombustivelDO) {
+    public ResponseEntity<String> editarTipoCombustivel(@PathVariable("id") BigInteger id, @RequestBody TipoCombustivelDO tipoCombustivelDO) throws Exception {
         tipoCombustivelService.editarTipoCombustivel(id, tipoCombustivelDO);
         return ResponseEntity.ok("Tipo de combustível editado com sucesso!");
     }

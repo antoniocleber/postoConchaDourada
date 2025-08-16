@@ -4,6 +4,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 import postoConchaDourada.api.combustivel.converters.TipoCombustivelConverter;
 import postoConchaDourada.api.combustivel.models.TipoCombustivelDO;
+import postoConchaDourada.api.combustivel.repositories.interfaces.TipoCombustivelJPARepository;
 
 import java.math.BigInteger;
 import java.util.List;

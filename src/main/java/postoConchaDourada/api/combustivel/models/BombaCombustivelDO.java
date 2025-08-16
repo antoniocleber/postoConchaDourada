@@ -7,22 +7,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class TipoCombustivelDO {
+public class BombaCombustivelDO {
 
     BigInteger id;
 
     @NotNull
     @NotBlank
     String nome;
-
-    @NotNull
-    @NotBlank
-    BigDecimal precoPorLitro;
 }

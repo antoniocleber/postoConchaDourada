@@ -1,4 +1,4 @@
-package postoConchaDourada.api.combustivel.repositories;
+package postoConchaDourada.api.combustivel.repositories.interfaces;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import postoConchaDourada.api.combustivel.entities.TipoCombustivelEntity;
